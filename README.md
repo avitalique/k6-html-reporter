@@ -11,13 +11,13 @@ A light weight html reporter for k6
 NPM:
 
 ``` bash
-npm install k6-html-reporter --save-dev
+npm install @avitalique/k6-html-reporter --save-dev
 ```
 
 YARN:
 
 ```bash
-yarn add k6-html-reporter --dev
+yarn add @avitalique/k6-html-reporter --dev
 ```
 
 
