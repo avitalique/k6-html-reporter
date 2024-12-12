@@ -1,5 +1,5 @@
 {
-  "name": "k6-html-reporter",
+  "name": "@avitalique/k6-html-reporter",
   "version": "1.0.5",
   "description": "A html reporter for k6",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/szboynono/k6-html-reporter.git"
+    "url": "git+https://github.com/avitalique/k6-html-reporter.git"
   },
   "keywords": [
     "report",
@@ -35,8 +35,5 @@
   ],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/szboynono/k6-html-reporter/issues"
-  },
-  "homepage": "https://github.com/szboynono/k6-html-reporter#readme"
+  "homepage": "https://github.com/avitalique/k6-html-reporter#readme"
 }

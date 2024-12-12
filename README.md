@@ -2,9 +2,8 @@
 
 A light weight html reporter for k6
 
-[![Build Status](https://travis-ci.com/szboynono/k6-html-reporter.svg?branch=main)](https://travis-ci.com/szboynono/k6-html-reporter) 
-<a href="https://www.npmjs.com/package/k6-html-reporter" alt="Latest Stable Version">![npm](https://img.shields.io/npm/v/k6-html-reporter.svg)</a>
-<a href="https://www.npmjs.com/package/k6-html-reporter" alt="Total Downloads">![npm](https://img.shields.io/npm/dw/k6-html-reporter.svg)</a>
+| :exclamation: This is a customization of [`szboynono/k6-html-reporter`](https://github.com/szboynono/k6-html-reporter)  |
+|-------------------------------------------------------------------------------------------------------------------------|
  
 
 
