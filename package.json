@@ -1,6 +1,6 @@
 {
   "name": "@avitalique/k6-html-reporter",
-  "version": "1.0.5-dev.0",
+  "version": "1.0.5-dev.1",
   "description": "A html reporter for k6",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
