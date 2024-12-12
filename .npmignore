@@ -6,4 +6,3 @@ node_modules
 *.tgz
 jest.config.js
 .idea
-dist
