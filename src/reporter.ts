@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import ejs from "ejs";
 import { DisplayTotalThresholdResult, MetricsType, Options } from "./types";
-import { compareNameAscending } from "./util";
+import { calculatePassRate, compareNameAscending, roundTwoDecimalPlaces } from "./util";
 
 export function generate(options: Options) {
   const resolvedInputPath = path.resolve(process.cwd(), options.jsonFile);
@@ -40,6 +40,11 @@ function writeHtmlReport(content: JSON, filePath: string): void {
       ...data,
       pathArray: splitedPath.join(" \u21C0 "),
     };
+  });
+
+  // add pass rate to checks
+  checks.forEach((check) => {
+    check['passRate'] = '' + calculatePassRate(check['passes'], check['fails']) + '%';
   });
 
   ejs.renderFile(

@@ -98,6 +98,7 @@
                 <th scope="col">check</th>
                 <th scope="col">passes</th>
                 <th scope="col">fails</th>
+                <th scope="col">pass rate</th>
               </tr>
             </thead>
             <tbody>
@@ -111,6 +112,7 @@
                 <td><%= checks[i].pathArray%></td>
                 <td><%= checks[i].passes %></td>
                 <td><%= checks[i].fails %></td>
+                <td><%= checks[i].passRate %></td>
               </tr>
               <% } %>
             </tbody>
