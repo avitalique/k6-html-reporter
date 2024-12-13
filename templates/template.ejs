@@ -196,12 +196,12 @@
                 <% } %>
                   <th scope="row" class="text-secondary"><%= i+1 %></th>
                   <td><%= trendMetrics[i].name %></td>
-                  <td><%= trendMetrics[i].values.avg.toFixed(2) %> ms</td>
-                  <td><%= trendMetrics[i].values.max.toFixed(2) %> ms</td>
-                  <td><%= trendMetrics[i].values.med.toFixed(2) %> ms</td>
-                  <td><%= trendMetrics[i].values.min.toFixed(2) %> ms</td>
-                  <td><%= trendMetrics[i].values["p(90)"].toFixed(2) %> ms</td>
-                  <td><%= trendMetrics[i].values["p(95)"].toFixed(2) %> ms</td>
+                  <td><%= trendMetrics[i].values.avg %></td>
+                  <td><%= trendMetrics[i].values.max %></td>
+                  <td><%= trendMetrics[i].values.med %></td>
+                  <td><%= trendMetrics[i].values.min %></td>
+                  <td><%= trendMetrics[i].values["p(90)"] %></td>
+                  <td><%= trendMetrics[i].values["p(95)"] %></td>
                 </tr>
                 <% } %>
               </tbody>

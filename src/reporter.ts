@@ -2,7 +2,9 @@ import fs from "fs";
 import path from "path";
 import ejs from "ejs";
 import { DisplayTotalThresholdResult, MetricsType, Options } from "./types";
-import { calculatePassRate, compareNameAscending, roundTwoDecimalPlaces } from "./util";
+import {
+  calculatePassRate, compareNameAscending, humanizeBytes, humanizeDuration, roundTwoDecimalPlaces
+} from "./util";
 
 export function generate(options: Options) {
   const resolvedInputPath = path.resolve(process.cwd(), options.jsonFile);
@@ -45,6 +47,23 @@ function writeHtmlReport(content: JSON, filePath: string): void {
   // add pass rate to checks
   checks.forEach((check) => {
     check['passRate'] = '' + calculatePassRate(check['passes'], check['fails']) + '%';
+  });
+
+  // humanize counter metric values
+  counterMetrics.forEach((metric) => {
+    if (metric.contains === 'data') {
+      metric.values.count = humanizeBytes(metric.values.count);
+      metric.values.rate = humanizeBytes(metric.values.rate) + '/s';
+    } else {
+      metric.values.rate = '' + roundTwoDecimalPlaces(metric.values.rate) + '/s';
+    }
+  });
+
+  // humanize counter metric values
+  trendMetrics.forEach((metric) => {
+    Object.keys(metric.values).forEach((key) => {
+      metric.values[key] = humanizeDuration(metric.values[key]);
+    });
   });
 
   ejs.renderFile(
