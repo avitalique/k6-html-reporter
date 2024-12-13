@@ -66,6 +66,11 @@ function writeHtmlReport(content: JSON, filePath: string): void {
     });
   });
 
+  // humanize rate metric values
+  rateMetrics.forEach((metric) => {
+    metric.values.rate = '' + roundDecimal(metric.values.rate, 3) + '/s';
+  });
+
   ejs.renderFile(
     templatePath,
     {
