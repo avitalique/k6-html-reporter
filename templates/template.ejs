@@ -183,8 +183,10 @@
                   <th scope="col">max</th>
                   <th scope="col">med</th>
                   <th scope="col">min</th>
+                  <th scope="col">P(80)</th>
                   <th scope="col">P(90)</th>
                   <th scope="col">P(95)</th>
+                  <th scope="col">P(99)</th>
                 </tr>
               </thead>
               <tbody>
@@ -200,8 +202,10 @@
                   <td><%= trendMetrics[i].values.max %></td>
                   <td><%= trendMetrics[i].values.med %></td>
                   <td><%= trendMetrics[i].values.min %></td>
+                  <td><%= trendMetrics[i].values["p(80)"] %></td>
                   <td><%= trendMetrics[i].values["p(90)"] %></td>
                   <td><%= trendMetrics[i].values["p(95)"] %></td>
+                  <td><%= trendMetrics[i].values["p(99)"] %></td>
                 </tr>
                 <% } %>
               </tbody>
