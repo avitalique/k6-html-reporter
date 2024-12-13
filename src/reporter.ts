@@ -59,7 +59,7 @@ function writeHtmlReport(content: JSON, filePath: string): void {
     }
   });
 
-  // humanize counter metric values
+  // humanize trend metric values
   trendMetrics.forEach((metric) => {
     Object.keys(metric.values).forEach((key) => {
       metric.values[key] = humanizeDuration(metric.values[key]);
