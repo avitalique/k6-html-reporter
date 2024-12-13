@@ -3,7 +3,7 @@ export function calculatePassRate(passes: number, fails: number) {
   if (!isFinite(passRate)) {
     passRate = 0;
   }
-  return roundTwoDecimalPlaces(passRate);
+  return roundDecimal(passRate, 2);
 }
 
 export const compareNameAscending = (a, b): number => {
@@ -64,8 +64,8 @@ export function humanizeDuration(dur: number) {
   return rem + 'h' + result;
 }
 
-export function roundTwoDecimalPlaces(val: number) {
-  return Math.round((val + Number.EPSILON) * 100) / 100;
+export function roundDecimal(val: number, places: number = 2) {
+  return Math.round((val + Number.EPSILON) * (10 ** places)) / (10 ** places);
 }
 
 function toFixedNoTrailingZeros(val: number, prec: number) {

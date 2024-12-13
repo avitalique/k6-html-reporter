@@ -3,7 +3,7 @@ import path from "path";
 import ejs from "ejs";
 import { DisplayTotalThresholdResult, MetricsType, Options } from "./types";
 import {
-  calculatePassRate, compareNameAscending, humanizeBytes, humanizeDuration, roundTwoDecimalPlaces
+  calculatePassRate, compareNameAscending, humanizeBytes, humanizeDuration, roundDecimal
 } from "./util";
 
 export function generate(options: Options) {
@@ -55,7 +55,7 @@ function writeHtmlReport(content: JSON, filePath: string): void {
       metric.values.count = humanizeBytes(metric.values.count);
       metric.values.rate = humanizeBytes(metric.values.rate) + '/s';
     } else {
-      metric.values.rate = '' + roundTwoDecimalPlaces(metric.values.rate) + '/s';
+      metric.values.rate = '' + roundDecimal(metric.values.rate, 2) + '/s';
     }
   });
 
